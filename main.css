@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px 0;
+    color: #fff;
+    display: flex;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase; /*DEIXA TUDO EM CAIXA ALTA*/
+
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input,
+button {
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+#botao-cancelar{
+    background-color: red;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /*quando chegar no limite, cria nova linha*/
+}
+
+ul li {
+    max-width: 25%; /*onde cada item começa*/
+    list-style: none; /*para remover as bolinhas dos topicos*/
+    position: relative;
+    max-height: 280px;
+    overflow-y: hidden; /*oculta toda a parte da foto que ultrapassar o limite de altura (y) ou largura (x) - como um corte*/
+}
+
+ul li img {
+    width: 100%; /*100% em relação ao espaço que o li tem*/
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute; /*para não vazar o layout e fique concentrado no elemento pai, o elemento pai vai precisar ter position relative)*/
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /*de 0 a 1, sendo o 0 desaparecer com um elemento*/
+    transition: all ease .5s; /*efeito/animação quando passar o mouse*/
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-imagem-link { /*em cada item do tópico, quando o mouse estiver em cima, a barra deve ser formatada (...)*/
+    opacity: 1;
+}
